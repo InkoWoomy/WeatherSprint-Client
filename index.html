@@ -8,56 +8,76 @@
     <link href="style/styles.css" rel="stylesheet">
   </head>
   <body>
-    <div class="container-fluid text-center" style="margin-top: 15px;">
+    <div class="container-fluid" style="margin-top: 15px;">
       <div class="row" style="margin-right: 10px; margin-left: 5px; height: 120px;">
         <div class="col-6">
         <!--Row 1-->
-          <div class="row" style="margin-right: 5px; margin-left: 10px; height: 140px;">
-            <div class="col-2 border border-dark test btn" style="margin-right: 2px;">
-              Fahrenheit
+          <div class="row" style="margin-right: 5px; margin-left: 10px; height: 15%">
+            <!--Fahrenheit Button-->
+            <div class="col-2 border border-dark box btn" style="margin-right: 2px;" id="buttonF">
+              <img src="./assets/iconFahrenheit.png" alt="Fahrenheit" width="100%">
             </div>
-            <div class="col-2 border border-dark test btn" style="margin-right: 2px;">
-              Celsius
+            <!--Celsius Button-->
+            <div class="col-2 border border-dark box btn" style="margin-right: 2px;" id="buttonC">
+              <img src="./assets/iconCelsius.png" alt="Celsius" width="100%">
             </div>
-            <div class="col-sm border border-dark test rounded">
-              Sunset Time
+            <!--Sunset Box-->
+            <div class="col-sm border border-dark box rounded" style="justify-content: start;">              
+              <div id="dataSunsetTime" style="font-size: 50px; font-weight: bold;">
+                <img src="./assets/iconSunset.png" alt="Sunset" width="24%">
+                <img src="./assets/iconTripleArrows.png" alt="Sunset" width="24%">
+                5:00 PM
+              </div>
             </div>
           </div>
         <!--Row 2-->
           <div style="margin-top: 10px">
             <div class="row" style="margin-right: 5px; margin-left: 10px; height: 425px;">
-              <div class="col border border-dark test" style="margin-right: 2px;">
-                Today's Weather
+              <div class="col border border-dark box" style="margin-right: 2px;">
+                <div id="dataSunriseTime" style="font-size: 50px; font-weight: bold;">
+                  6:00 AM
+                </div>
+                <div id="dataTemperature" style="font-size: 50px; font-weight: bold;">
+                  66° 
+                </div>
               </div>
             </div>
           </div>
         <!--Row 3-->
         <div style="margin-top: 10px">
           <div class="row" style="margin-right: 5px; margin-left: 10px; height: 425px;">
-            <div class="col-6 border border-dark test" style="margin-right: 2px;">
-              Search Bar
+            <div class="col-6 border border-dark box" style="margin-right: 2px;">
+              <!--Search Bar-->
+              <form class="d-flex" role="search" style="margin-top: 10px;">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <img src="./assets/iconFloppy.png"class="btn btn-outline-seconary" type="submit" width="20%" alt="save">
+              </form>
             </div>
-            <div class="col-sm border border-dark test" style="margin-right: 2px;">
+            <div class="col-sm border border-dark box" style="margin-right: 2px;">
               Favorites Bar
             </div>
           </div>
         </div>
+      </div>
         
-
-
-
-
-
-
-
-
-
-
-        </div>
-        
-        
-        <div class="col-6 border border-dark test rounded">
-          Level 1
+      <!--Forecast Column-->
+        <div class="col-6 border border-dark box rounded text-center" style="font-weight: bold;">
+            <div class="row border border-dark" height="auto">
+              adslkfj
+            </div>
+            <div class="row border border-dark" height="20%">
+              adslkfj
+            </div>
+            <div class="row border border-dark" height="20%">
+              adslkfj
+            </div>
+            <div class="row border border-dark" height="20%">
+              adslkfj
+            </div>
+            <div class="row border border-dark" height="20%">
+              adslkfj
+            </div>
+         
         </div>
       </div>
     </div>

@@ -31,20 +31,7 @@ let lon = 0;
 let currentCity = 'stockton';
 let currentCountry = 'us';
 
-if (inputUser.value) {
-    const citySearch = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${inputUser.value}&limit=5&appid=${apiKey}`);
-    const cityName = await citySearch.json();
-    lat = cityName[0].lat;
-    lon = cityName[0].lon;
-}
-else {
-    //set lat and lon to coords
-    lat = position.coords.latitude
-    lon = position.coords.longitude
-}
-
-
-// async function conditionsCheck(string, forecast) {
+async function conditionsCheck(string, forecast) {
     switch (string) {
         case "clear sky":
             forecast.src = "../assets/iconClear.png";
@@ -85,7 +72,7 @@ else {
         default:
             break;
     }
-// }
+}
 
 
 
@@ -93,7 +80,8 @@ else {
 
 async function apiCall() {
 
-   
+
+
     //CITY DATA (location API)
     //Fetch Location Data
     const locationPromise = await fetch("http://api.openweathermap.org/data/2.5/forecast?q=" + `${currentCity},` + `${currentCountry}`+ "&appid=" + `${apiKey}`);
@@ -101,6 +89,11 @@ async function apiCall() {
 
     //Display data of location in console
     console.log(locationData);
+
+    
+    //Latitude and Longitude
+    lat = locationData.city.coord.lat;
+    lon = locationData.city.coord.lon;
 
     
     //STATE DATA (Geocoding API)
@@ -205,7 +198,8 @@ async function apiCall() {
     //             inputUser.value = "";
     //         }
     //     }
-    //
+
+    //     return false;
     // });
     
     

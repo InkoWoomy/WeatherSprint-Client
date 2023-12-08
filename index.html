@@ -36,13 +36,13 @@
               <div class="col border border-dark box rounded" style="margin-right: 2px;">
                 <!--City, Temp, Feels like-->
                 <div class="row">
-                  <div class="col-6 text-start" id="dataCity" style="font-size: 42px; font-weight: bold; margin: 0;" >
+                  <div class="col-6 text-start" id="dataCity" style="font-size: 32px; font-weight: bold; margin: 0;" >
                     Location
                   </div>
-                  <div class="col-2 text-end" id="dataCurrentTemp" style="font-size: 42px; font-weight: bold; margin: 0;" >
+                  <div class="col-2 text-end" id="dataCurrentTemp" style="font-size: 32px; font-weight: bold; margin: 0;" >
                     66° 
                   </div>
-                  <div class="col-3 text-end" id="dataFeelsLike" style="font-size: 42px; font-weight: bold; margin: 0;" >
+                  <div class="col-3 text-end" id="dataFeelsLike" style="font-size: 32px; font-weight: bold; margin: 0;" >
                     66° 
                   </div>
 
@@ -73,12 +73,13 @@
         <!--Row 3-->
         <div style="margin-top: 10px">
           <div class="row" style="margin-right: 5px; margin-left: 10px; height: 425px;">
-            <div class="col-6 border border-dark box" style="margin-right: 2px;">
+            <div class="col-6 border border-dark box d-flex" style="margin-right: 2px;">
               <!--Search Bar-->
-              <form class="d-flex" role="search" style="margin-top: 10px;">
-                <input class="form-control me-2" type="search" placeholder="Search for a City" aria-label="Search" id="inputUser">
-                <img src="./assets/iconFloppy.png" class="btn btn-outline-seconary" type="submit" width="15%;" height="auto%" alt="save" title="Add to Favorites Bar">
-              </form>
+              <div class="container-fluid">
+                <input class="form-control" type="search" placeholder="Search for a City" aria-label="Search" id="inputUser" style="margin-top: 10px">
+                <!-- <img src="./assets/iconFloppy.png" class="col-2 btn btn-outline-seconary" type="submit"  height="15px" alt="save" title="Add to Favorites Bar"> -->
+              </div>
+              
             </div>
             <div class="d-flex col border border-dark box" style="margin-right: 2px;">
               <div style="margin-top: 10px;">

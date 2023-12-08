@@ -8,7 +8,7 @@ let dataFeelsLike = document.getElementById("dataFeelsLike");
 let dataClouds = document.getElementById("dataClouds");
 let dataWinds = document.getElementById("dataWinds");
 let dataHumid = document.getElementById("dataHumid");
-let inputUser = document.getElementById("userInput");
+let inputUser = document.getElementById("inputUser");
 let forecast1 = document.getElementById("forecast1");
 let forecast2 = document.getElementById("forecast2");
 let forecast3 = document.getElementById("forecast3");
@@ -28,51 +28,10 @@ let lat = 0;
 //longitude
 let lon = 0;
 
-let currentCity = 'stockton';
+let currentCity = '';
 let currentCountry = 'us';
 
-async function conditionsCheck(string, forecast) {
-    switch (string) {
-        case "clear sky":
-            forecast.src = "../assets/iconClear.png";
-            break;
-        case "Clear":
-            forecast.src = "../assets/iconClear.png";
-            break;
-        case "rain":
-            forecast.src = '../assets/rainy.png';
-            break;
-        case "Clouds":
-            forecast.src = '../assets/cloud.png';
-            break;
-        case "few clouds":
-            forecast.src = "../assets/cloudy.png";
-            break;
-        case "scattered clouds":
-            forecast.src = "../assets/cloud.png";
-            break;
-        case "broken clouds":
-            forecast.src = "../assets/cloud.png";
-            break;
-        case "shower rain":
-            forecast.src = "../assets/rainy.png";
-            break;
-        case "thunderstorm":
-            forecast.src = "../assets/storm.png";
-            break;
-        case "snow":
-            forecast.src = "../assets/snowflake.png";
-            break;
-        case "haze":
-            forecast.src = "../assets/haze.png";
-            break;
-        case "light rain":
-            forecast.src = "../assets/rainy.png";
-            break;
-        default:
-            break;
-    }
-}
+
 
 
 
@@ -81,7 +40,7 @@ async function conditionsCheck(string, forecast) {
 async function apiCall() {
 
 
-
+    
     //CITY DATA (location API)
     //Fetch Location Data
     const locationPromise = await fetch("http://api.openweathermap.org/data/2.5/forecast?q=" + `${currentCity},` + `${currentCountry}`+ "&appid=" + `${apiKey}`);
@@ -159,7 +118,7 @@ async function apiCall() {
     const forecastItem = forecastData.list[(i*8)-1];
     const forecastDate = new Date(currentDate.getTime() + 86400000 * (i));
  
-    const forecastTemp = Math.ceil(forecastItem.main.temp) + '°F';
+    // const forecastTemp = Math.ceil(forecastItem.main.temp) + '°F';
 
     // Update forecast elements
 
@@ -176,34 +135,15 @@ async function apiCall() {
     
 }
 
-
-        
-    
-    
-    // Event listener for Enter key in the input field
-
-    // !!!IMPORTANT TO FIX!!!
-    // inputUser.addEventListener('keydown', async function(event) {
-    //     if (event.key === "Enter") {
-    //         const userInput = inputUser.value.trim().toLowerCase();
-
-    //         if (userInput) {
-    //             // Use the entered city for the API call
-    //             currentCity = userInput;
-
-    //             // Call the API with the new city
-    //             await apiCall();
-
-    //             // Clear the input field
-    //             inputUser.value = "";
-    //         }
-    //     }
-
-    //     return false;
-    // });
-    
-    
-
+inputUser.addEventListener('keydown', function(event){
+    if(event.key === "Enter"){
+        console.log(inputUser.value);
+        let inputResult = inputUser.value.toLowerCase();
+        currentCity = inputResult;
+        inputUser.value = '';
+        apiCall();
+    }
+});
 
 apiCall();
 

@@ -8,38 +8,65 @@
     <link href="style/styles.css" rel="stylesheet">
   </head>
   <body>
-    <div class="container-fluid" style="margin-top: 15px;">
+    <div class="container-fluid" style="margin-top: 25px;">
       <div class="row" style="margin-right: 10px; margin-left: 5px; height: 120px;">
         <div class="col-6">
-        <!--Row 1-->
+          <!--Row 1-->
           <div class="row" style="margin-right: 5px; margin-left: 10px; height: 15%">
             <!--Fahrenheit Button-->
             <div class="col-2 border border-dark box btn" style="margin-right: 2px;" id="buttonF">
-              <img src="./assets/iconFahrenheit.png" alt="Fahrenheit" width="100%">
+              <img src="./assets/iconFahrenheit.png" alt="Fahrenheit" width="100%" title="Convert to Fahrenheit">
             </div>
             <!--Celsius Button-->
             <div class="col-2 border border-dark box btn" style="margin-right: 2px;" id="buttonC">
-              <img src="./assets/iconCelsius.png" alt="Celsius" width="100%">
+              <img src="./assets/iconCelsius.png" alt="Celsius" width="100%"  title="Convert to Celsius">
             </div>
             <!--Sunset Box-->
-            <div class="col-6 border border-dark box rounded">  
-              
+            <div class="col border border-dark box rounded">  
+              <div class="d-flex align-items-center">
                 <img src="./assets/iconSunset.png" alt="Sunset" width="24%">
                 <img src="./assets/iconTripleArrows.png" alt="Sunset" width="24%">           
-                <div id="dataSunsetTime" style="font-size: 50px; font-weight: bold;" width="auto">Sunset PM</div> 
-               
+                <div id="dataSunsetTime" style="font-size: 50px; font-weight: bold;" width="24%">Sunset PM</div> 
+               </div>
             </div>
           </div>
         <!--Row 2-->
           <div style="margin-top: 10px">
             <div class="row" style="margin-right: 5px; margin-left: 10px; height: 425px;">
-              <div class="col border border-dark box" style="margin-right: 2px;">
-                <div id="dataCity" style="font-size: 50px; font-weight: bold;">
-                  City
-                </div>
-                <div id="dataCurrentTemp" style="font-size: 50px; font-weight: bold;">
-                  66° 
-                </div>
+              <div class="col border border-dark box rounded" style="margin-right: 2px;">
+                <!--City, Temp, Feels like-->
+                <div class="row">
+                  <div class="col-6 text-start" id="dataCity" style="font-size: 42px; font-weight: bold; margin: 0;" >
+                    Location
+                  </div>
+                  <div class="col-2 text-end" id="dataCurrentTemp" style="font-size: 42px; font-weight: bold; margin: 0;" >
+                    66° 
+                  </div>
+                  <div class="col-3 text-end" id="dataFeelsLike" style="font-size: 42px; font-weight: bold; margin: 0;" >
+                    66° 
+                  </div>
+
+              <!--Clouds, Wind, Humidity-->
+              <div class="row align-items-center" style="font-size: 36px; font-weight: bold;">
+                  <div class="col-4 text-center">
+                    <img src="./assets/iconRain.png" alt="precipitation" width="100%" >  
+                    <div id="dataClouds">precipitation</div>
+                  </div>
+                  <div class="col-4 text-center">
+                    <img src="./assets/iconWindy.png" alt="Sunset" width="100%">   
+                    <div id="dataWinds">Wind Level</div>
+                  </div>
+                  <div class="col-4 text-center">
+                    <img src="./assets/iconHumidity.png" alt="Sunset" width="100%" id="dataHumidity"> 
+                    <div id="dataHumid">Humidity</div>
+                  </div>
+              </div>
+
+
+
+
+
+
               </div>
             </div>
           </div>
@@ -49,41 +76,38 @@
             <div class="col-6 border border-dark box" style="margin-right: 2px;">
               <!--Search Bar-->
               <form class="d-flex" role="search" style="margin-top: 10px;">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <img src="./assets/iconFloppy.png"class="btn btn-outline-seconary" type="submit" width="20%" alt="save">
+                <input class="form-control me-2" type="search" placeholder="Search for a City" aria-label="Search" id="inputUser">
+                <img src="./assets/iconFloppy.png" class="btn btn-outline-seconary" type="submit" width="15%;" height="auto%" alt="save" title="Add to Favorites Bar">
               </form>
             </div>
-            <div class="col-sm border border-dark box" style="margin-right: 2px;">
-              Favorites Bar
+            <div class="d-flex col border border-dark box" style="margin-right: 2px;">
+              <div style="margin-top: 10px;">
+                Favorites Bar
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
         
-      <!--Forecast Column-->
-        <div class="col-6 border border-dark box rounded text-center" style="font-weight: bold;">
-            <div class="row border border-dark" style="height: 200px;">
-              adslkfj
-            </div>
-            <div class="row border border-dark" style="height: 200px;">
-              adslkfj
-            </div>
-            <div class="row border border-dark" style="height: 200px;">
-              adslkfj
-            </div>
-            <div class="row border border-dark" style="height: 200px;">
-              adslkfj
-            </div>
-            <div class="row border border-dark" style="height: 200px;">
-              adslkfj
-            </div>
-            <div class="row border border-dark" style="height: 200px;">
-              adslkfj
-            </div>
-
-            
-         
+    <!--Forecast Column-->
+      <div class="col-6 box rounded text-start" style="font-weight: bold;">
+        <div class="row border border-dark align-items-center" style="height: 20%; font-size: 42px;">
+          <div id="forecast1">Forecast1</div>
         </div>
+        <div class="row border border-dark align-items-center" style="height: 20%; font-size: 42px;">
+          <div id="forecast2">Forecast2</div>
+        </div>
+        <div class="row border border-dark align-items-center" style="height: 20%; font-size: 42px;">
+          <div id="forecast3">Forecast3</div>
+        </div>
+        <div class="row border border-dark align-items-center" style="height: 20%; font-size: 42px;">
+          <div id="forecast4">Forecast4</div>
+        </div>
+        <div class="row border border-dark align-items-center" style="height: 20%; font-size: 42px;">
+          <div id="forecast5">Forecast5</div>
+        </div>
+
       </div>
     </div>
     
